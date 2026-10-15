@@ -1,35 +1,20 @@
-header {
-    background-color: #183C63;
-    color: #FFFFFF;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 16px;
-}
+const botoes = document.querySelectorAll("button");
 
-main {
-    background-color: #FFFFFF;
-    color: #183C63;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 16px;
-}
+botoes.forEach(function (botao) {
+    let curtiu = false;
+    botao.addEventListener("click", botaoClicado);
 
-article {
-    display: flex;
-}
+    function botaoClicado() {
+        let texto = botao.querySelector("span");
 
-img {
-    width: 80px;
-    height: 80px;
-}
+        if (curtiu === false) {
+            texto.textContent++;
+            curtiu = true;
+        } else {
+            texto.textContent--;
+            curtiu = false;
+        }
+    }
+});
 
-.artigo-autor {
-    font-weight: bold;
-}
-
-.artigo-fonte {
-    font-size: 14px;
-    font-style: italic;
-}
 
